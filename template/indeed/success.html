@@ -1,0 +1,36 @@
+
+{% extends 'partials/layout.html' %}
+
+{% block title %}
+    <title>Easy Apply - Automate Job Apply</title>
+{% endblock title %}
+
+
+{% block explict_import %}
+{% include "partials/explict_import.html" %}
+{% endblock explict_import %}
+
+{% block welcome %}
+<!-- ***** Wellcome Area Start ***** -->
+<section class="wellcome_area clearfix" id="home">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 col-md">
+        <h2>Process Completed.</h2><br>
+        <a href="{% url 'home' %}" style="color: black;">Click here!!</a>  to go homepage
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome thumb -->
+  <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+    <img src="../../static/img/bg-img/welcome-img.png" alt="" />
+  </div>
+</section>
+<!-- ***** Wellcome Area End ***** -->
+{% endblock welcome %}
+
+
+{% block script %}
+{% include "partials/scripts.html" %}
+{% endblock script %}

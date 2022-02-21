@@ -1,0 +1,81 @@
+
+{% extends 'partials/layout.html' %}
+{% load static %}
+{% block title %}
+    <title>Easy Apply - Automate Job Apply</title>
+{% endblock title %}
+
+
+{% block explict_import %}
+{% include "partials/explict_import.html" %}
+{% endblock explict_import %}
+
+{% block loader %}
+{% include "partials/loader.html" %}
+{% endblock loader %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block welcome %}
+{% if subscription_status == "Expire" %}
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+
+                <div class="col-12 col-md-6">
+                <h3 style="color: white; font-weight: bold;">Your subscription is expired.</h3>
+                    {% include "partials/price.html" %}
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            <img src="../../../static/img/bg-img/welcome-img.png" alt="">
+        </div>
+    </section>
+{% elif subscription_status == False %}
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+
+                <div class="col-12 col-md-12">
+                {% if coupon_status == "Expire" %}
+                    <h3 style="color: white; font-weight: bold;">Your do not have subcription yet. No coupon available for you.</h3>
+                    {% include "partials/price.html" %}
+                {% elif coupon_status == False %}
+                    <h3 style="color: white; font-weight: bold;">Subscribtion required. Want FREE coupon? <a href='{% url "add_coupon" %}'><span>Get Coupon</span></h3>
+                    {% include "partials/price.html" %}
+                {% elif coupon_status == True %}
+                    {% include "linkedin/apply_form.html" %}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            <img src="../../../static/img/bg-img/welcome-img.png" alt="">
+        </div>
+    </section>
+{% else %}
+<!-- ***** Wellcome Area Start ***** -->
+    {% include "linkedin/apply_form.html" %}
+    <!-- ***** Wellcome Area End ***** -->
+{% endif %}
+
+{% endblock welcome %}
+
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block script %}
+{% include "partials/scripts.html" %}
+{% if subscription_status == "Expire" or subscription_status == False %}
+<script src="https://js.stripe.com/v3/"></script>  <!-- new -->
+<script src="{% static 'js/stripe/main.js' %}"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+{% endif %}
+{% endblock script %}

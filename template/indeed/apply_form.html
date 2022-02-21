@@ -1,0 +1,68 @@
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                <h6 style="color: #f8190e; font-weight: bold;">{{error}}</h6>
+                <h3 style="color: white; font-weight: bold;">Indeed Job Apply</h3>
+                    <form action="apply" method="post">
+                        {% csrf_token %}
+                        <!-- Message Input Area Start -->
+                        <div class="contact_input_area">
+                            <div class="row">
+                               
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" placeholder="Indeed Username" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="password" placeholder="Indeed Password" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="job" placeholder="Desired Job Title" required>
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="city" placeholder="City" >
+                                    </div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="state" placeholder="State" >
+                                    </div>
+                                </div>
+                                {% comment %} <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="number" placeholder="Contact number" required>
+                                    </div>
+                                </div> {% endcomment %}
+                                {% comment %} <div class="col-md-12">
+                                    <h5>Resume</h5>
+                                    <h7>Please attach resume in DOC/DOCX/PDF format(5 MB)</h7>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="file" class="form-control" name="resume" placeholder="Your resume" required>
+                                    </div>
+                                </div> {% endcomment %}
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn submit-btn">Apply Now</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Message Input Area End -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            <img src="../../../static/img/bg-img/welcome-img.png" alt="">
+        </div>
+    </section>

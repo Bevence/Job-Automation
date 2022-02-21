@@ -1,0 +1,62 @@
+
+{% extends 'partials/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Easy Apply - Automate Job Apply</title>
+{% endblock title %}
+
+
+{% block explict_import %}
+{% include "partials/explict_import.html" %}
+{% endblock explict_import %}
+
+{% block loader %}
+{% include "partials/loader.html" %}
+{% endblock loader %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block welcome %}
+
+<!-- ***** Wellcome Area Start ***** -->
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                <h3 style="color: white; font-weight: bold;">Add promo code: {{ promo_code }}</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- Message Input Area Start -->
+                        <div class="contact_input_area">
+                            <div class="row">
+                            {% crispy form %}
+                            </div>
+                            <div class="row">
+                            <button type="submit" class="btn submit-btn">Validate Coupon</button>
+                            </div>
+                        </div>
+                        <!-- Message Input Area End -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            <img src="../../../static/img/bg-img/welcome-img.png" alt="">
+        </div>
+    </section>
+    <!-- ***** Wellcome Area End ***** -->
+
+{% endblock welcome %}
+
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block script %}
+{% include "partials/scripts.html" %}
+{% endblock script %}

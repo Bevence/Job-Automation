@@ -1,0 +1,58 @@
+{% extends 'partials/layout.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Easy Apply - Automate Job Apply</title>
+{% endblock title %}
+
+
+{% block explict_import %}
+{% include "partials/explict_import.html" %}
+{% endblock explict_import %}
+
+{% block loader %}
+{% include "partials/loader.html" %}
+{% endblock loader %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header %}
+
+{% block welcome %}
+{% include "partials/welcome.html" %}
+{% endblock welcome %}
+
+{% block special %}
+{% include "partials/special.html" %}
+{% endblock special %}
+
+{% block facts %}
+{% include "partials/facts.html" %}
+{% endblock facts %}
+
+{% block price %}
+{% include "partials/price.html" %}
+{% endblock price %}
+
+{% comment %} {% block feedback %}
+{% include "partials/feedback.html" %}
+{% endblock feedback %} 
+
+{% block teams %}
+{% include "partials/teams.html" %}
+{% endblock teams %} {% endcomment %}
+
+{% block contact %}
+{% include "partials/contact.html" %}
+{% endblock contact %}
+
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block script %}
+{% include "partials/scripts.html" %}
+<script src="https://js.stripe.com/v3/"></script>  <!-- new -->
+<script src="{% static 'js/stripe/main.js' %}"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+{% endblock script %}
